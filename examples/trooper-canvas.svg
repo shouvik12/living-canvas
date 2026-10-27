@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="Trooper — keeps agents alive with smart routing and local fallback">
+<defs>
+  <radialGradient id="bg" cx="25%" cy="50%" r="85%">
+    <stop offset="0" stop-color="#121a12"/><stop offset="1" stop-color="#060806"/>
+  </radialGradient>
+  <radialGradient id="sweepg" cx="0" cy="0" r="1">
+    <stop offset="0" stop-color="#9fd36b" stop-opacity=".25"/><stop offset="1" stop-color="#9fd36b" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M24 0H0V24" fill="none" stroke="#9fd36b" stroke-opacity=".07"/>
+  </pattern>
+  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  <g id="cap">
+    <rect x="-17" y="-6" width="34" height="12" rx="6" fill="#0b120b" stroke="#e9f5dc" stroke-width="1.2"/>
+    <rect x="-14" y="-3" width="4" height="6" rx="1.5" fill="#ffd27a"/>
+    <rect x="-9" y="-3" width="7" height="6" rx="1.5" fill="#7fc8ff"/>
+    <rect x="-1" y="-3" width="15" height="6" rx="1.5" fill="#9fd36b"/>
+  </g>
+  <style>
+    .t{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .h{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .sweep{transform-origin:200px 150px;animation:spin 6s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .x1{animation:x1 9s infinite}.x2{animation:x2 9s infinite}
+    @keyframes x1{0%,21%{opacity:0}23%,40%{opacity:1}46%,100%{opacity:0}}
+    @keyframes x2{0%,43%{opacity:0}45%,62%{opacity:1}68%,100%{opacity:0}}
+    .ok{animation:ok 9s infinite}
+    @keyframes ok{0%,70%{opacity:0}73%,94%{opacity:1}100%{opacity:0}}
+    .s1{animation:s1 9s infinite}.s2{animation:s2 9s infinite}.s3{animation:s3 9s infinite}
+    @keyframes s1{0%,21%{opacity:0}23%,96%{opacity:1}100%{opacity:0}}
+    @keyframes s2{0%,43%{opacity:0}45%,96%{opacity:1}100%{opacity:0}}
+    @keyframes s3{0%,70%{opacity:0}72%,96%{opacity:1}100%{opacity:0}}
+    .blink{animation:bl 1.4s steps(2) infinite}
+    @keyframes bl{50%{opacity:.25}}
+    .dash{stroke-dasharray:3 6;animation:d 1.2s linear infinite}
+    @keyframes d{to{stroke-dashoffset:-9}}
+    @media (prefers-reduced-motion:reduce){
+      .sweep,.x1,.x2,.s1,.s2,.blink,.dash{animation:none}.x1,.x2{opacity:0}
+      .ok,.s3{animation:none;opacity:1}.pk{display:none}
+    }
+  </style>
+</defs>
+
+<rect width="900" height="300" fill="url(#bg)"/>
+<rect width="900" height="300" fill="url(#grid)"/>
+
+<!-- radar -->
+<g opacity=".9">
+  <circle cx="200" cy="150" r="118" fill="none" stroke="#9fd36b" stroke-opacity=".12"/>
+  <circle cx="200" cy="150" r="78" fill="none" stroke="#9fd36b" stroke-opacity=".1"/>
+  <g class="sweep"><path d="M200 150 L318 150 A118 118 0 0 0 283 66 Z" fill="url(#sweepg)" transform="translate(200 150) scale(1) translate(-200 -150)"/></g>
+</g>
+
+<!-- routes -->
+<g fill="none" stroke-width="1.5">
+  <path class="dash" d="M86 150 C150 150 200 70 268 70" stroke="#9fd36b" stroke-opacity=".35"/>
+  <path class="dash" d="M300 82 C318 105 318 128 300 140" stroke="#ffb347" stroke-opacity=".35"/>
+  <path class="dash" d="M300 160 C318 180 318 205 300 222" stroke="#ffb347" stroke-opacity=".35"/>
+</g>
+
+<!-- agent -->
+<g class="t">
+  <circle cx="70" cy="150" r="16" fill="#0b120b" stroke="#e9f5dc" stroke-width="1.5"/>
+  <circle class="blink" cx="70" cy="150" r="4" fill="#e9f5dc"/>
+  <text x="70" y="186" fill="#cfe3bb" font-size="9" text-anchor="middle" letter-spacing="2">AGENT</text>
+</g>
+
+<!-- providers -->
+<g class="t" font-size="9.5" letter-spacing="1.8">
+  <rect x="268" y="56" width="74" height="28" rx="6" fill="#0b120b" stroke="#cfe3bb" stroke-opacity=".5"/>
+  <text x="305" y="74" fill="#cfe3bb" text-anchor="middle">CLOUD A</text>
+  <rect x="268" y="136" width="74" height="28" rx="6" fill="#0b120b" stroke="#cfe3bb" stroke-opacity=".5"/>
+  <text x="305" y="154" fill="#cfe3bb" text-anchor="middle">CLOUD B</text>
+  <rect x="268" y="214" width="74" height="30" rx="6" fill="#0b120b" stroke="#9fd36b"/>
+  <text x="305" y="233" fill="#9fd36b" text-anchor="middle">LOCAL</text>
+
+  <!-- failure marks -->
+  <g class="x1"><rect x="268" y="56" width="74" height="28" rx="6" fill="#ff5a5a" opacity=".14" stroke="#ff5a5a"/>
+    <text x="350" y="66" fill="#ff7a7a" font-size="8.5">429</text></g>
+  <g class="x2"><rect x="268" y="136" width="74" height="28" rx="6" fill="#ff5a5a" opacity=".14" stroke="#ff5a5a"/>
+    <text x="350" y="146" fill="#ff7a7a" font-size="8.5">503</text></g>
+  <g class="ok"><rect x="262" y="208" width="86" height="42" rx="9" fill="#9fd36b" opacity=".18" filter="url(#soft)"/>
+    <text x="350" y="224" fill="#9fd36b" font-size="8.5">200 ✓</text></g>
+</g>
+
+<!-- packet: one capsule, three legs over a 9s loop -->
+<g class="pk">
+  <use href="#cap">
+    <animateMotion dur="9s" repeatCount="indefinite" path="M86 150 C150 150 200 70 268 70" keyPoints="0;0;1;1" keyTimes="0;.04;.21;1" calcMode="linear"/>
+    <animate attributeName="opacity" dur="9s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.04;.21;.23;1"/>
+  </use>
+  <use href="#cap">
+    <animateMotion dur="9s" repeatCount="indefinite" path="M300 82 C318 105 318 128 300 140" keyPoints="0;0;1;1" keyTimes="0;.27;.43;1" calcMode="linear"/>
+    <animate attributeName="opacity" dur="9s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.26;.27;.43;.45;1"/>
+  </use>
+  <use href="#cap">
+    <animateMotion dur="9s" repeatCount="indefinite" path="M300 160 C318 180 318 205 300 222" keyPoints="0;0;1;1;1" keyTimes="0;.49;.66;.94;1" calcMode="linear"/>
+    <animate attributeName="opacity" dur="9s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;.48;.49;.94;1"/>
+  </use>
+</g>
+
+<!-- status log -->
+<g class="t" font-size="8.5" letter-spacing="1" fill="#8fa982">
+  <text class="s1" x="40" y="238">→ cloud A rate-limited · fallback</text>
+  <text class="s2" x="40" y="252">→ cloud B down · fallback</text>
+  <text class="s3" x="40" y="266" fill="#9fd36b">→ local · context intact</text>
+</g>
+
+<!-- title -->
+<g class="h">
+  <text x="472" y="128" fill="#eef6e4" font-size="62" font-weight="800" letter-spacing="-1">Trooper</text>
+  <text x="476" y="160" fill="#9fd36b" font-size="12" font-weight="600" letter-spacing="4">KEEPS AGENTS ALIVE</text>
+  <text x="476" y="194" fill="#9aa892" font-size="13">Smart routing, context compaction, local fallback.</text>
+</g>
+<g class="t" font-size="9.5" letter-spacing="2">
+  <rect x="476" y="222" width="10" height="8" rx="2" fill="#ffd27a"/><text x="491" y="230" fill="#ffd27a">ANCHOR</text>
+  <rect x="556" y="222" width="10" height="8" rx="2" fill="#7fc8ff"/><text x="571" y="230" fill="#7fc8ff">SITREP</text>
+  <rect x="636" y="222" width="10" height="8" rx="2" fill="#9fd36b"/><text x="651" y="230" fill="#9fd36b">TAIL</text>
+  <text x="476" y="254" fill="#6f8566" font-size="8.5">GO · DROP-IN BASE URL · NO SDK CHANGES</text>
+</g>
+</svg>

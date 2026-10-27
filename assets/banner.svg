@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="living-canvas — turn anything into moving art">
+<defs>
+  <radialGradient id="bg" cx="35%" cy="50%" r="85%">
+    <stop offset="0" stop-color="#17112a"/><stop offset="1" stop-color="#07060d"/>
+  </radialGradient>
+  <linearGradient id="ink" x1="0" x2="1">
+    <stop offset="0" stop-color="#ff7ab6"/><stop offset=".5" stop-color="#ffc66d"/><stop offset="1" stop-color="#6de0ff"/>
+  </linearGradient>
+  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+  <clipPath id="frame"><rect x="250" y="60" width="240" height="180" rx="14"/></clipPath>
+  <style>
+    .t{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .h{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .in{opacity:0;animation:in 12s infinite}
+    .i1{animation-delay:0s}.i2{animation-delay:4s}.i3{animation-delay:8s}
+    @keyframes in{0%{opacity:0;transform:translateX(-14px)}4%,22%{opacity:1;transform:translateX(0)}30%{opacity:0;transform:translateX(70px)}100%{opacity:0}}
+    .dot{animation:flow 2s linear infinite}
+    @keyframes flow{from{transform:translateX(0);opacity:0}20%{opacity:1}to{transform:translateX(56px);opacity:0}}
+    .w{animation:wave 6s ease-in-out infinite alternate}
+    @keyframes wave{to{transform:translateX(-80px)}}
+    .orb{transform-origin:370px 150px;animation:spin 10s linear infinite}
+    .orb2{transform-origin:370px 150px;animation:spin 16s linear infinite reverse}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .pulse{animation:pu 4s ease-in-out infinite}
+    @keyframes pu{50%{opacity:.35}}
+    @media (prefers-reduced-motion:reduce){.in,.dot,.w,.orb,.orb2,.pulse{animation:none}.i1{opacity:1}}
+  </style>
+</defs>
+<rect width="900" height="300" fill="url(#bg)"/>
+
+<!-- inputs -->
+<g class="t" font-size="11" letter-spacing=".5">
+  <g class="in i1"><rect x="34" y="136" width="166" height="28" rx="14" fill="#1d1733" stroke="#6de0ff" stroke-opacity=".5"/><text x="117" y="154" fill="#bfefff" text-anchor="middle">github.com/you/repo</text></g>
+  <g class="in i2"><rect x="34" y="136" width="166" height="28" rx="14" fill="#1d1733" stroke="#ffc66d" stroke-opacity=".5"/><text x="117" y="154" fill="#ffe2ad" text-anchor="middle">design-doc.md</text></g>
+  <g class="in i3"><rect x="34" y="136" width="166" height="28" rx="14" fill="#1d1733" stroke="#ff7ab6" stroke-opacity=".5"/><text x="117" y="154" fill="#ffc2dc" text-anchor="middle">"one sentence"</text></g>
+</g>
+<g fill="#ffc66d">
+  <circle class="dot" cx="196" cy="150" r="2"/>
+  <circle class="dot" cx="196" cy="150" r="2" style="animation-delay:.66s"/>
+  <circle class="dot" cx="196" cy="150" r="2" style="animation-delay:1.33s"/>
+</g>
+
+<!-- canvas -->
+<rect class="pulse" x="244" y="54" width="252" height="192" rx="18" fill="url(#ink)" opacity=".5" filter="url(#soft)"/>
+<rect x="250" y="60" width="240" height="180" rx="14" fill="#0b0915"/>
+<g clip-path="url(#frame)">
+  <g class="w" fill="none" stroke-width="2.5" stroke-linecap="round">
+    <path d="M250 200 q20 -24 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" stroke="#6de0ff" opacity=".55"/>
+    <path d="M250 214 q20 -16 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" stroke="#ff7ab6" opacity=".4"/>
+  </g>
+  <circle cx="370" cy="132" r="16" fill="url(#ink)"/>
+  <circle cx="370" cy="132" r="30" fill="none" stroke="#ffc66d" stroke-opacity=".25"/>
+  <g class="orb"><circle cx="412" cy="132" r="4" fill="#6de0ff"/><circle cx="328" cy="132" r="3" fill="#ff7ab6"/></g>
+  <g class="orb2"><circle cx="370" cy="78" r="3" fill="#ffc66d"/><circle cx="370" cy="186" r="2.5" fill="#6de0ff"/></g>
+  <g fill="#fff" opacity=".5"><circle cx="280" cy="84" r="1"/><circle cx="460" cy="96" r="1.2"/><circle cx="300" cy="150" r=".9"/><circle cx="452" cy="170" r="1"/></g>
+</g>
+
+<!-- title -->
+<g class="h">
+  <text x="540" y="132" fill="#f3efff" font-size="50" font-weight="800" letter-spacing="-1">living-canvas</text>
+  <text x="543" y="162" fill="url(#ink)" font-size="12" font-weight="700" letter-spacing="4">TURN ANYTHING INTO MOVING ART</text>
+  <text x="543" y="196" fill="#9b93b5" font-size="13">A Claude skill for animated README banners.</text>
+</g>
+<text class="t" x="543" y="234" fill="#6f6890" font-size="9.5" letter-spacing="2">SVG · NO JS · NO EXTERNAL ASSETS · ~7 KB</text>
+</svg>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="DEV·TV — the developer internet, broadcast">
+<defs>
+  <radialGradient id="bg" cx="30%" cy="50%" r="80%">
+    <stop offset="0" stop-color="#1a1410"/><stop offset="1" stop-color="#07070a"/>
+  </radialGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+    <stop offset="0" stop-color="#ff9a3c" stop-opacity=".35"/><stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="screen" cx="50%" cy="45%" r="70%">
+    <stop offset="0" stop-color="#14261e"/><stop offset="1" stop-color="#050b08"/>
+  </radialGradient>
+  <filter id="noise" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="1">
+      <animate attributeName="seed" values="1;7;3;9;5;2;8;4" dur="0.4s" repeatCount="indefinite" calcMode="discrete"/>
+    </feTurbulence>
+    <feColorMatrix values="0 0 0 0 .9  0 0 0 0 .95  0 0 0 0 .9  0 0 0 1.6 -.4"/>
+  </filter>
+  <pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse">
+    <rect width="4" height="1" fill="#000" opacity=".35"/>
+  </pattern>
+  <clipPath id="scr"><rect x="70" y="58" width="300" height="186" rx="22"/></clipPath>
+  <style>
+    .t{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .h{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .ch{opacity:0;animation:ch 21s infinite}
+    @keyframes ch{0%,1%{opacity:0}2%,13%{opacity:1}14.3%,100%{opacity:0}}
+    .c1{animation-delay:0s}.c2{animation-delay:3s}.c3{animation-delay:6s}.c4{animation-delay:9s}
+    .c5{animation-delay:12s}.c6{animation-delay:15s}.c7{animation-delay:18s}
+    .st{animation:st 3s infinite}
+    @keyframes st{0%{opacity:.9}10%{opacity:0}97%{opacity:0}100%{opacity:.9}}
+    .bar{animation:bar 3s infinite;transform-box:fill-box;transform-origin:left}
+    @keyframes bar{0%,12%{transform:scaleX(0)}40%,100%{transform:scaleX(1)}}
+    .tick{animation:tick 21s linear infinite}
+    @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-640px)}}
+    .roll{animation:roll 6s linear infinite}
+    @keyframes roll{from{transform:translateY(-60px)}to{transform:translateY(260px)}}
+    .led{animation:led 2s ease-in-out infinite}
+    @keyframes led{50%{opacity:.4}}
+    .live{animation:led 1.2s steps(2) infinite}
+    @media (prefers-reduced-motion:reduce){
+      .ch,.st,.bar,.tick,.roll,.led,.live{animation:none}.c1{opacity:1}.st{opacity:0}
+    }
+  </style>
+</defs>
+
+<rect width="900" height="300" fill="url(#bg)"/>
+<circle cx="220" cy="150" r="230" fill="url(#glow)"/>
+
+<!-- TV set -->
+<rect x="44" y="34" width="352" height="234" rx="34" fill="#2a211a" stroke="#4a3a2c" stroke-width="2"/>
+<rect x="58" y="46" width="324" height="210" rx="28" fill="#0d0b09"/>
+<line x1="170" y1="34" x2="130" y2="6" stroke="#4a3a2c" stroke-width="3" stroke-linecap="round"/>
+<line x1="270" y1="34" x2="320" y2="4" stroke="#4a3a2c" stroke-width="3" stroke-linecap="round"/>
+
+<g clip-path="url(#scr)">
+  <rect x="70" y="58" width="300" height="186" fill="url(#screen)"/>
+
+  <!-- channels -->
+  <g class="t">
+    <g class="ch c1"><text x="88" y="86" fill="#ffb15c" font-size="12" letter-spacing="2">CH 01 · GITHUB</text><text x="88" y="108" fill="#7fe0a8" font-size="10" letter-spacing="1.5">RISING REPOSITORY</text></g>
+    <g class="ch c2"><text x="88" y="86" fill="#ffb15c" font-size="12" letter-spacing="2">CH 02 · HACKER NEWS</text><text x="88" y="108" fill="#7fe0a8" font-size="10" letter-spacing="1.5">FRONT PAGE</text></g>
+    <g class="ch c3"><text x="88" y="86" fill="#ffb15c" font-size="12" letter-spacing="2">CH 03 · DEV</text><text x="88" y="108" fill="#7fe0a8" font-size="10" letter-spacing="1.5">TOP ARTICLE TODAY</text></g>
+    <g class="ch c4"><text x="88" y="86" fill="#ffb15c" font-size="12" letter-spacing="2">CH 04 · HUGGING FACE</text><text x="88" y="108" fill="#7fe0a8" font-size="10" letter-spacing="1.5">TRENDING MODEL</text></g>
+    <g class="ch c5"><text x="88" y="86" fill="#ffb15c" font-size="12" letter-spacing="2">CH 05 · RELEASES</text><text x="88" y="108" fill="#7fe0a8" font-size="10" letter-spacing="1.5">NEW VERSION SHIPPED</text></g>
+    <g class="ch c6"><text x="88" y="86" fill="#ffb15c" font-size="12" letter-spacing="2">CH 06 · AI PAPERS</text><text x="88" y="108" fill="#7fe0a8" font-size="10" letter-spacing="1.5">MOST DISCUSSED TODAY</text></g>
+    <g class="ch c7"><text x="88" y="86" fill="#ffb15c" font-size="12" letter-spacing="2">CH 07 · LATEST PAPERS</text><text x="88" y="108" fill="#7fe0a8" font-size="10" letter-spacing="1.5">PUBLISHED MINUTES AGO</text></g>
+  </g>
+
+  <!-- headline lines -->
+  <rect class="bar" x="88" y="124" width="250" height="11" rx="3" fill="#e8f3ec" opacity=".9"/>
+  <rect class="bar" x="88" y="142" width="190" height="11" rx="3" fill="#e8f3ec" opacity=".9" style="animation-delay:.15s"/>
+  <rect class="bar" x="88" y="166" width="230" height="5" rx="2" fill="#7fe0a8" opacity=".45" style="animation-delay:.3s"/>
+  <rect class="bar" x="88" y="177" width="160" height="5" rx="2" fill="#7fe0a8" opacity=".45" style="animation-delay:.4s"/>
+
+  <text class="t" x="88" y="204" fill="#7fe0a8" font-size="8.5" letter-spacing="1.5" opacity=".75">NOW ▸ NEXT ▸ LATER</text>
+  <g class="live"><circle cx="332" cy="82" r="4" fill="#ff4d4d"/><text class="t" x="340" y="85" fill="#ff8a8a" font-size="8" letter-spacing="1">LIVE</text></g>
+
+  <!-- ticker -->
+  <rect x="70" y="216" width="300" height="20" fill="#ff9a3c" opacity=".14"/>
+  <g class="tick t" font-size="9" letter-spacing="1.5" fill="#ffc890">
+    <text x="80" y="230">GITHUB ◆ HACKER NEWS ◆ DEV ◆ HUGGING FACE ◆ RELEASES ◆ AI PAPERS ◆ LATEST PAPERS ◆</text>
+    <text x="720" y="230">GITHUB ◆ HACKER NEWS ◆ DEV ◆ HUGGING FACE ◆ RELEASES ◆ AI PAPERS ◆ LATEST PAPERS ◆</text>
+  </g>
+
+  <!-- static burst on each channel change -->
+  <rect class="st" x="70" y="58" width="300" height="186" filter="url(#noise)"/>
+  <rect x="70" y="58" width="300" height="186" fill="url(#scan)"/>
+  <rect class="roll" x="70" y="58" width="300" height="26" fill="#bfffd8" opacity=".05"/>
+</g>
+<rect x="70" y="58" width="300" height="186" rx="22" fill="none" stroke="#000" stroke-opacity=".6" stroke-width="6"/>
+
+<!-- knobs -->
+<circle class="led" cx="366" cy="258" r="3.5" fill="#4dff88"/>
+
+<!-- title -->
+<g class="h">
+  <text x="462" y="132" fill="#f4ede4" font-size="64" font-weight="800" letter-spacing="-1">DEV<tspan fill="#ff9a3c">·</tspan>TV</text>
+  <text x="466" y="166" fill="#ff9a3c" font-size="12.5" font-weight="600" letter-spacing="4.5">THE DEVELOPER INTERNET, BROADCAST</text>
+  <text x="466" y="204" fill="#9a8f84" font-size="13" letter-spacing=".5">Pick a channel. It plays.</text>
+</g>
+<g class="t" font-size="10" letter-spacing="2" fill="#7fe0a8" opacity=".8">
+  <text x="466" y="240">7 CHANNELS · ONE HTML FILE · NO BACKEND</text>
+</g>
+</svg>
