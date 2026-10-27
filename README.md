@@ -1,3 +1,5 @@
+<p align="center"><img src="living-canvas-banner.svg" alt="Living Canvas: any repo, doc or idea into an animated README banner" width="100%"></p>
+
 <p align="center"><img src="assets/banner.svg" alt="living-canvas — turn anything into moving art" width="100%"></p>
 
 # living-canvas

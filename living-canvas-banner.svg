@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
+<style>
+.serif{font-family:Georgia,'Times New Roman',serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.sans{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+.st{animation:hl 9s infinite}.s1{animation-delay:0s}.s2{animation-delay:3s}.s3{animation-delay:6s}
+@keyframes hl{0%,30%{opacity:1}36%,94%{opacity:.4}100%{opacity:1}}
+.in{opacity:0;animation:fade 9s infinite}
+.a1{animation-delay:.2s}.a2{animation-delay:.7s}.a3{animation-delay:1.2s}
+@keyframes fade{0%{opacity:0}5%,85%{opacity:1}95%,100%{opacity:0}}
+.ink{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 9s infinite}
+.k1{animation-delay:3.2s}.k2{animation-delay:3.8s}.k3{animation-delay:4.4s}
+@keyframes draw{0%{stroke-dashoffset:300}12%,80%{stroke-dashoffset:0}92%,100%{stroke-dashoffset:300}}
+.mp{animation:mp 3s infinite}.m2{animation-delay:1s}.m3{animation-delay:2s}
+@keyframes mp{0%,30%{opacity:1}36%,100%{opacity:.3}}
+.flow{animation:fl 3s linear infinite}
+@keyframes fl{to{transform:translateX(18px)}}
+@media (prefers-reduced-motion:reduce){.st,.in,.ink,.mp,.flow{animation:none;opacity:1;stroke-dashoffset:0}}
+</style>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1418"/><stop offset="1" stop-color="#101d22"/></linearGradient>
+<linearGradient id="paint" x1="0" x2="1"><stop offset="0" stop-color="#3fd6c6"/><stop offset="1" stop-color="#f2c14e"/></linearGradient>
+</defs>
+<rect width="900" height="300" fill="url(#bg)"/>
+<g stroke="#3fd6c6" stroke-opacity=".06" fill="none"><path d="M0 250 C200 200 300 290 500 240 S800 200 900 230"/><path d="M0 270 C250 230 400 300 600 260 S850 240 900 255"/></g>
+
+<text x="450" y="38" text-anchor="middle" class="serif" font-size="27" fill="#eef6f4" font-style="italic">Living Canvas</text>
+<text x="450" y="60" text-anchor="middle" class="sans" font-size="12.5" fill="#8fb0ab">A Claude skill that turns any repo, doc or idea into an animated banner anyone gets at a glance.</text>
+
+<!-- 1 INPUT -->
+<g class="st s1">
+<text x="40" y="94" class="mono" font-size="11" font-weight="700" fill="#3fd6c6" letter-spacing="2">1 · GIVE IT ANYTHING</text>
+<g class="in a1"><rect x="40" y="108" width="230" height="30" rx="6" fill="#132a2e" stroke="#2b4e52"/>
+<text x="52" y="127" class="mono" font-size="10" fill="#cfe6e2">github.com/you/your-repo</text></g>
+<g class="in a2"><rect x="40" y="146" width="230" height="30" rx="6" fill="#132a2e" stroke="#2b4e52"/>
+<text x="52" y="165" class="mono" font-size="10" fill="#cfe6e2">README.md · design-doc.pdf</text></g>
+<g class="in a3"><rect x="40" y="184" width="230" height="30" rx="6" fill="#132a2e" stroke="#2b4e52"/>
+<text x="52" y="203" class="mono" font-size="10" fill="#cfe6e2">"a CLI that tidies logs"</text></g>
+<text x="40" y="244" class="sans" font-size="11" fill="#8fb0ab">repo, URL, doc, or one sentence</text>
+</g>
+
+<g class="flow"><text x="282" y="166" class="mono" font-size="16" fill="#3fd6c6">›››</text></g>
+
+<!-- 2 STORY -->
+<g class="st s2">
+<text x="330" y="94" class="mono" font-size="11" font-weight="700" fill="#9ee3cf" letter-spacing="2">2 · FINDS THE STORY</text>
+<rect x="330" y="106" width="230" height="112" rx="8" fill="#0f2226" stroke="#2b4e52"/>
+<path class="ink k1" d="M346 134 C380 124 410 142 446 130" stroke="#3fd6c6" stroke-width="3" fill="none" stroke-linecap="round"/>
+<text x="458" y="136" class="sans" font-size="10" fill="#cfe6e2">problem</text>
+<path class="ink k2" d="M346 164 C380 154 410 172 446 160" stroke="#9ee3cf" stroke-width="3" fill="none" stroke-linecap="round"/>
+<text x="458" y="166" class="sans" font-size="10" fill="#cfe6e2">what it does</text>
+<path class="ink k3" d="M346 194 C380 184 410 202 446 190" stroke="#f2c14e" stroke-width="3" fill="none" stroke-linecap="round"/>
+<text x="458" y="196" class="sans" font-size="10" fill="#cfe6e2">result</text>
+<text x="330" y="244" class="sans" font-size="11" fill="#8fb0ab">+ a metaphor that fits the subject</text>
+</g>
+
+<g class="flow"><text x="572" y="166" class="mono" font-size="16" fill="#f2c14e">›››</text></g>
+
+<!-- 3 OUTPUT -->
+<g class="st s3">
+<text x="620" y="94" class="mono" font-size="11" font-weight="700" fill="#f2c14e" letter-spacing="2">3 · A LIVING BANNER</text>
+<rect x="620" y="106" width="240" height="112" rx="8" fill="#16130a" stroke="url(#paint)" stroke-width="1.5"/>
+<rect x="636" y="118" width="110" height="7" rx="3" fill="#eef6f4" opacity=".85"/>
+<rect x="636" y="130" width="160" height="4" rx="2" fill="#8fb0ab" opacity=".6"/>
+<g class="mp"><rect x="636" y="146" width="64" height="56" rx="5" fill="#3fd6c6" fill-opacity=".25" stroke="#3fd6c6"/><text x="668" y="178" text-anchor="middle" class="mono" font-size="9" fill="#3fd6c6">1</text></g>
+<g class="mp m2"><rect x="708" y="146" width="64" height="56" rx="5" fill="#9ee3cf" fill-opacity=".2" stroke="#9ee3cf"/><text x="740" y="178" text-anchor="middle" class="mono" font-size="9" fill="#9ee3cf">2</text></g>
+<g class="mp m3"><rect x="780" y="146" width="64" height="56" rx="5" fill="#f2c14e" fill-opacity=".2" stroke="#f2c14e"/><text x="812" y="178" text-anchor="middle" class="mono" font-size="9" fill="#f2c14e">3</text></g>
+<text x="620" y="244" class="sans" font-size="11" fill="#d9c58f">README-ready SVG · loops · &lt;100KB</text>
+</g>
+
+<text x="450" y="285" text-anchor="middle" class="mono" font-size="9" fill="#4f6d69" letter-spacing="3">IF A SCREENSHOT CAN'T EXPLAIN IT, IT ISN'T DONE</text>
+</svg>
